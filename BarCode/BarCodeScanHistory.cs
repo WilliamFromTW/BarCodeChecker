@@ -22,5 +22,9 @@ namespace BarCode
             this.bAR_CODE_SCAN_HISTORYTableAdapter.Fill(this.storageDataSet.BAR_CODE_SCAN_HISTORY);
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
     }
 }

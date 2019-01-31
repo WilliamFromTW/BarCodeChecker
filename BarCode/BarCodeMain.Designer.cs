@@ -28,61 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.storageDataSet = new BarCode.storageDataSet();
+            this.bAR_CODE_SCAN_HISTORYTableAdapter = new BarCode.storageDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter();
+            this.linkWebSite = new System.Windows.Forms.LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storageDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 36);
+            this.button1.Location = new System.Drawing.Point(32, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 46);
             this.button1.TabIndex = 0;
-            this.button1.Text = "條碼檢測";
+            this.button1.Text = "檢測條碼是否重複";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(214, 36);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 46);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "料號基本資料維護";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(396, 36);
+            this.button3.Location = new System.Drawing.Point(220, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(168, 46);
             this.button3.TabIndex = 2;
-            this.button3.Text = "歷史掃描記錄";
+            this.button3.Text = "查看歷史記錄";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(408, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(141, 46);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "備份歷史紀錄";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(564, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(116, 46);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "清除歷史紀錄";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.storageDataSet;
+            this.bindingSource1.Position = 0;
+            // 
+            // storageDataSet
+            // 
+            this.storageDataSet.DataSetName = "storageDataSet";
+            this.storageDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bAR_CODE_SCAN_HISTORYTableAdapter
+            // 
+            this.bAR_CODE_SCAN_HISTORYTableAdapter.ClearBeforeFill = true;
+            // 
+            // linkWebSite
+            // 
+            this.linkWebSite.AutoSize = true;
+            this.linkWebSite.Location = new System.Drawing.Point(592, 61);
+            this.linkWebSite.Name = "linkWebSite";
+            this.linkWebSite.Size = new System.Drawing.Size(88, 12);
+            this.linkWebSite.TabIndex = 5;
+            this.linkWebSite.TabStop = true;
+            this.linkWebSite.Text = "https://kafeiou.pw";
+            this.linkWebSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebSite_LinkClicked);
             // 
             // BarCodeMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 114);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(717, 80);
+            this.Controls.Add(this.linkWebSite);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Name = "BarCodeMain";
             this.Text = "BarCode";
             this.Load += new System.EventHandler(this.BarCodeMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storageDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private storageDataSet storageDataSet;
+        private storageDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter bAR_CODE_SCAN_HISTORYTableAdapter;
+        private System.Windows.Forms.LinkLabel linkWebSite;
     }
 }
 

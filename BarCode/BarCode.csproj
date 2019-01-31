@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>發行\</PublishUrl>
+    <PublishUrl>released\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <TargetCulture>zh-Hant</TargetCulture>
     <PublisherName>翰興資訊有限公司</PublisherName>
-    <ApplicationRevision>7</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -61,13 +62,14 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>william.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
@@ -117,6 +119,9 @@
     <Compile Include="ScanBarCode.Designer.cs">
       <DependentUpon>ScanBarCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="storageDataSet.cs">
+      <DependentUpon>storageDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="storageDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -144,7 +149,6 @@
     <EmbeddedResource Include="ScanBarCode.resx">
       <DependentUpon>ScanBarCode.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BarCode_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -166,7 +170,6 @@
     <None Include="storageDataSet.xss">
       <DependentUpon>storageDataSet.xsd</DependentUpon>
     </None>
-    <None Include="william.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
