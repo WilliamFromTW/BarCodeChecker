@@ -37,6 +37,7 @@
             this.storageDataSet = new BarCode.storageDataSet();
             this.bAR_CODE_SCAN_HISTORYTableAdapter = new BarCode.storageDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter();
             this.linkWebSite = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageDataSet)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +99,7 @@
             // linkWebSite
             // 
             this.linkWebSite.AutoSize = true;
-            this.linkWebSite.Location = new System.Drawing.Point(592, 61);
+            this.linkWebSite.Location = new System.Drawing.Point(617, 61);
             this.linkWebSite.Name = "linkWebSite";
             this.linkWebSite.Size = new System.Drawing.Size(88, 12);
             this.linkWebSite.TabIndex = 5;
@@ -106,11 +107,22 @@
             this.linkWebSite.Text = "https://kafeiou.pw";
             this.linkWebSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebSite_LinkClicked);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(604, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 12);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "2019-05-06 updated";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // BarCodeMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 80);
+            this.ClientSize = new System.Drawing.Size(717, 105);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.linkWebSite);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
@@ -136,6 +148,7 @@
         private storageDataSet storageDataSet;
         private storageDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter bAR_CODE_SCAN_HISTORYTableAdapter;
         private System.Windows.Forms.LinkLabel linkWebSite;
+        private System.Windows.Forms.Label label1;
     }
 }
 

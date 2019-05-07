@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -80,6 +81,19 @@ namespace BarCode
         {
             System.Data.OleDb.OleDbConnection con = null;
             OleDbCommand command = null;
+            InputBoxValidation validation = delegate (string val) {
+                if (val == "")
+                    return "Value cannot be empty.";
+                if (!val.Equals("zuojian"))
+                    return "password is not correct!";
+                else
+                return "";
+            };
+            string value = "info@example.com";
+            if (InputBox.Show("請輸入密碼後刪除資料", "密碼:", ref value, validation) == DialogResult.OK)
+            {
+
+
             DialogResult dialogResult = MessageBox.Show("刪除資料之前,請先備份,以及關閉\"檢測條碼視窗\"\r\n確定刪除嗎?", "刪除資料", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -105,6 +119,8 @@ namespace BarCode
             {
 
             }
+            }
+
         }
 
         private void linkWebSite_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -121,6 +137,11 @@ namespace BarCode
             var si = new ProcessStartInfo(url);
             Process.Start(si);
             linkWebSite.LinkVisited = true;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

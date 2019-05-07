@@ -38,7 +38,8 @@ namespace BarCode
 
         private void ScanBarCodeTxt_TextChanged(object sender, EventArgs e)
         {
-            string date = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"); // includes leading zeros
+            string date  = DateTime.Now.ToString("MM月dd日 hh:mm:ss"); // includes leading zeros
+            string date2 = DateTime.Now.ToString("YYYY-MM-dd hh:mm:ss"); // includes leading zeros
             OleDbCommand command = null;
             if (ScanBarCodeTxt.Text.Length == Convert.ToInt32(BarCodeLength.Text.ToString()))
             {
@@ -48,7 +49,7 @@ namespace BarCode
                     if (con.State != ConnectionState.Open)
                         con.Open();
                     //MessageBox.Show(listBox2.Text);
-                    command = new OleDbCommand("INSERT INTO BAR_CODE_SCAN_HISTORY(SN,LOG) values ('" + this.ScanBarCodeTxt.Text + "','" + date + "')", con);
+                    command = new OleDbCommand("INSERT INTO BAR_CODE_SCAN_HISTORY(SN,LOG,STATUS,NOUSE) values ('" + this.ScanBarCodeTxt.Text + "','" + date + "','PASS','1')", con);
                     command.ExecuteNonQuery();
                     this.textResult.ForeColor = Color.Blue;
                     this.textResultStatus.ForeColor = Color.Blue;
@@ -59,13 +60,26 @@ namespace BarCode
                 }
                 catch (Exception ex)
                 {
+                    try
+                    {
+                        this.textResult.ForeColor = Color.Red;
+                        this.textResultStatus.ForeColor = Color.Red;
+                        this.textResult.Text = "檢查 " + this.ScanBarCodeTxt.Text + " ...";
+                        this.textResultStatus.Text = "FAIL!";
+                        DataSet ds = new DataSet();
+                        if (con.State != ConnectionState.Open)
+                            con.Open();
+                        //MessageBox.Show(listBox2.Text);
+                        command = new OleDbCommand("INSERT INTO BAR_CODE_SCAN_HISTORY(SN,LOG,STATUS,NOUSE) values ('" + this.ScanBarCodeTxt.Text + "','" + date + "','FAIL','" + date2 + "')", con);
+                        command.ExecuteNonQuery();
+                        ScanBarCodeTxt.Text = "";
+                        ScanBarCodeTxt.Focus();
+                    }catch(Exception ex2)
+                    {
+                        ScanBarCodeTxt.Text = "";
+                        ScanBarCodeTxt.Focus();
+                    }
 
-                    ScanBarCodeTxt.Text = "";
-                    ScanBarCodeTxt.Focus();
-                    this.textResult.ForeColor = Color.Red;
-                    this.textResultStatus.ForeColor = Color.Red;
-                    this.textResult.Text = "檢查 " + this.ScanBarCodeTxt.Text + " ...";
-                    this.textResultStatus.Text = "FAIL!";
                 }
             }
         }

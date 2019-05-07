@@ -33,6 +33,7 @@
             this.uIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lOGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bARCODESCANHISTORYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.storageDataSet = new BarCode.storageDataSet();
             this.bAR_CODE_SCAN_HISTORYTableAdapter = new BarCode.storageDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter();
@@ -51,15 +52,17 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.uIDDataGridViewTextBoxColumn,
             this.SN,
-            this.lOGDataGridViewTextBoxColumn});
+            this.lOGDataGridViewTextBoxColumn,
+            this.STATUS});
             this.dataGridView1.DataSource = this.bARCODESCANHISTORYBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(21, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 468);
+            this.dataGridView1.Size = new System.Drawing.Size(290, 468);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // uIDDataGridViewTextBoxColumn
             // 
@@ -86,10 +89,20 @@
             this.lOGDataGridViewTextBoxColumn.ReadOnly = true;
             this.lOGDataGridViewTextBoxColumn.Width = 78;
             // 
+            // STATUS
+            // 
+            this.STATUS.DataPropertyName = "STATUS";
+            this.STATUS.HeaderText = "狀態";
+            this.STATUS.Name = "STATUS";
+            this.STATUS.ReadOnly = true;
+            this.STATUS.Width = 54;
+            // 
             // bARCODESCANHISTORYBindingSource
             // 
             this.bARCODESCANHISTORYBindingSource.DataMember = "BAR_CODE_SCAN_HISTORY";
             this.bARCODESCANHISTORYBindingSource.DataSource = this.storageDataSet;
+            this.bARCODESCANHISTORYBindingSource.Sort = "LOG desc";
+            this.bARCODESCANHISTORYBindingSource.CurrentChanged += new System.EventHandler(this.bARCODESCANHISTORYBindingSource_CurrentChanged);
             // 
             // storageDataSet
             // 
@@ -104,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 492);
+            this.ClientSize = new System.Drawing.Size(334, 492);
             this.Controls.Add(this.dataGridView1);
             this.Name = "BarCodeScanHistory";
             this.Text = "BarCodeScanHistory";
@@ -125,5 +138,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn uIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SN;
         private System.Windows.Forms.DataGridViewTextBoxColumn lOGDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
     }
 }
