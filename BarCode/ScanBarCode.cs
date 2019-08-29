@@ -38,8 +38,8 @@ namespace BarCode
 
         private void ScanBarCodeTxt_TextChanged(object sender, EventArgs e)
         {
-            string date  = DateTime.Now.ToString("MM月dd日 hh:mm:ss"); // includes leading zeros
-            string date2 = DateTime.Now.ToString("YYYY-MM-dd hh:mm:ss"); // includes leading zeros
+            string date  = DateTime.Now.ToString("MM月dd日 HH:mm:ss"); // includes leading zeros
+            string date2 = DateTime.Now.ToString("YYYY-MM-dd HH:mm:ss"); // includes leading zeros
             OleDbCommand command = null;
             if (ScanBarCodeTxt.Text.Length == Convert.ToInt32(BarCodeLength.Text.ToString()))
             {

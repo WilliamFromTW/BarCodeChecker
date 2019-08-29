@@ -46,7 +46,7 @@ namespace BarCode
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("備份資料前,請關閉\"檢測條碼視窗\"", "備份", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("資料庫存放在("+ getDatabasePath() + ")\n備份資料前, 請關閉\"檢測條碼視窗\"", "備份", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
 
@@ -57,7 +57,7 @@ namespace BarCode
 
             }
         }
-        private void Backup()
+        private String getDatabasePath()
         {
             string dbFileName = "storage.mdb";
             string CurrentDatabasePath = null;
@@ -65,8 +65,16 @@ namespace BarCode
                 CurrentDatabasePath = System.IO.Path.Combine(AppDomain.CurrentDomain.GetData("DataDirectory").ToString(), dbFileName);
             else
                 CurrentDatabasePath = ".\\" + dbFileName;
+            return CurrentDatabasePath;
+        }
+        private void Backup()
+        {
+            string dbFileName = "storage.mdb";
+            string CurrentDatabasePath = null;
 
-            string destFileName = DateTime.Now.ToString("yyyy_MM_dd_hhmm") +"-" + dbFileName;
+            CurrentDatabasePath = getDatabasePath();
+
+            string destFileName = DateTime.Now.ToString("yyyy_MM_dd_HHmm") +"-" + dbFileName;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (fbd.ShowDialog() == DialogResult.OK)
             {

@@ -99,7 +99,7 @@
             // linkWebSite
             // 
             this.linkWebSite.AutoSize = true;
-            this.linkWebSite.Location = new System.Drawing.Point(617, 61);
+            this.linkWebSite.Location = new System.Drawing.Point(604, 61);
             this.linkWebSite.Name = "linkWebSite";
             this.linkWebSite.Size = new System.Drawing.Size(88, 12);
             this.linkWebSite.TabIndex = 5;
@@ -112,9 +112,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(604, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 12);
+            this.label1.Size = new System.Drawing.Size(61, 12);
             this.label1.TabIndex = 6;
-            this.label1.Text = "2019-05-06 updated";
+            this.label1.Text = "2019-08-29";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // BarCodeMain
