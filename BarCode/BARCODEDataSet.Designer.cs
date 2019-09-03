@@ -20,9 +20,9 @@ namespace BarCode {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("storageDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BARCODEDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class storageDataSet : global::System.Data.DataSet {
+    public partial class BARCODEDataSet : global::System.Data.DataSet {
         
         private BAR_CODE_SCAN_HISTORYDataTable tableBAR_CODE_SCAN_HISTORY;
         
@@ -30,7 +30,7 @@ namespace BarCode {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public storageDataSet() {
+        public BARCODEDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace BarCode {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected storageDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BARCODEDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace BarCode {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            storageDataSet cln = ((storageDataSet)(base.Clone()));
+            BARCODEDataSet cln = ((BARCODEDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace BarCode {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "storageDataSet";
+            this.DataSetName = "BARCODEDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/storageDataSet.xsd";
+            this.Namespace = "http://tempuri.org/BARCODEDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableBAR_CODE_SCAN_HISTORY = new BAR_CODE_SCAN_HISTORYDataTable();
@@ -225,7 +225,7 @@ namespace BarCode {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            storageDataSet ds = new storageDataSet();
+            BARCODEDataSet ds = new BARCODEDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -281,11 +281,13 @@ namespace BarCode {
             
             private global::System.Data.DataColumn columnUID;
             
-            private global::System.Data.DataColumn columnLOG;
-            
             private global::System.Data.DataColumn columnSN;
             
+            private global::System.Data.DataColumn columnLOG;
+            
             private global::System.Data.DataColumn columnSTATUS;
+            
+            private global::System.Data.DataColumn columnNOUSE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -330,14 +332,6 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn LOGColumn {
-                get {
-                    return this.columnLOG;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn SNColumn {
                 get {
                     return this.columnSN;
@@ -346,9 +340,25 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LOGColumn {
+                get {
+                    return this.columnLOG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn STATUSColumn {
                 get {
                     return this.columnSTATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOUSEColumn {
+                get {
+                    return this.columnNOUSE;
                 }
             }
             
@@ -389,13 +399,14 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BAR_CODE_SCAN_HISTORYRow AddBAR_CODE_SCAN_HISTORYRow(string LOG, string SN, string STATUS) {
+            public BAR_CODE_SCAN_HISTORYRow AddBAR_CODE_SCAN_HISTORYRow(int UID, string SN, string LOG, string STATUS, string NOUSE) {
                 BAR_CODE_SCAN_HISTORYRow rowBAR_CODE_SCAN_HISTORYRow = ((BAR_CODE_SCAN_HISTORYRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        LOG,
+                        UID,
                         SN,
-                        STATUS};
+                        LOG,
+                        STATUS,
+                        NOUSE};
                 rowBAR_CODE_SCAN_HISTORYRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBAR_CODE_SCAN_HISTORYRow);
                 return rowBAR_CODE_SCAN_HISTORYRow;
@@ -426,9 +437,10 @@ namespace BarCode {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnUID = base.Columns["UID"];
-                this.columnLOG = base.Columns["LOG"];
                 this.columnSN = base.Columns["SN"];
+                this.columnLOG = base.Columns["LOG"];
                 this.columnSTATUS = base.Columns["STATUS"];
+                this.columnNOUSE = base.Columns["NOUSE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -436,24 +448,22 @@ namespace BarCode {
             private void InitClass() {
                 this.columnUID = new global::System.Data.DataColumn("UID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUID);
-                this.columnLOG = new global::System.Data.DataColumn("LOG", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLOG);
                 this.columnSN = new global::System.Data.DataColumn("SN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSN);
+                this.columnLOG = new global::System.Data.DataColumn("LOG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLOG);
                 this.columnSTATUS = new global::System.Data.DataColumn("STATUS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTATUS);
+                this.columnNOUSE = new global::System.Data.DataColumn("NOUSE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOUSE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnUID}, true));
-                this.columnUID.AutoIncrement = true;
-                this.columnUID.AutoIncrementSeed = -1;
-                this.columnUID.AutoIncrementStep = -1;
                 this.columnUID.AllowDBNull = false;
                 this.columnUID.Unique = true;
-                this.columnLOG.MaxLength = 255;
-                this.columnSN.AllowDBNull = false;
-                this.columnSN.MaxLength = 255;
-                this.columnSTATUS.AllowDBNull = false;
-                this.columnSTATUS.MaxLength = 255;
+                this.columnSN.MaxLength = 50;
+                this.columnLOG.MaxLength = 50;
+                this.columnSTATUS.MaxLength = 50;
+                this.columnNOUSE.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -521,7 +531,7 @@ namespace BarCode {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                storageDataSet ds = new storageDataSet();
+                BARCODEDataSet ds = new BARCODEDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -607,6 +617,22 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SN {
+                get {
+                    try {
+                        return ((string)(this[this.tableBAR_CODE_SCAN_HISTORY.SNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'BAR_CODE_SCAN_HISTORY\' 中資料行 \'SN\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableBAR_CODE_SCAN_HISTORY.SNColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string LOG {
                 get {
                     try {
@@ -623,24 +649,46 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string SN {
+            public string STATUS {
                 get {
-                    return ((string)(this[this.tableBAR_CODE_SCAN_HISTORY.SNColumn]));
+                    try {
+                        return ((string)(this[this.tableBAR_CODE_SCAN_HISTORY.STATUSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'BAR_CODE_SCAN_HISTORY\' 中資料行 \'STATUS\' 的值是 DBNull。", e);
+                    }
                 }
                 set {
-                    this[this.tableBAR_CODE_SCAN_HISTORY.SNColumn] = value;
+                    this[this.tableBAR_CODE_SCAN_HISTORY.STATUSColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string STATUS {
+            public string NOUSE {
                 get {
-                    return ((string)(this[this.tableBAR_CODE_SCAN_HISTORY.STATUSColumn]));
+                    try {
+                        return ((string)(this[this.tableBAR_CODE_SCAN_HISTORY.NOUSEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'BAR_CODE_SCAN_HISTORY\' 中資料行 \'NOUSE\' 的值是 DBNull。", e);
+                    }
                 }
                 set {
-                    this[this.tableBAR_CODE_SCAN_HISTORY.STATUSColumn] = value;
+                    this[this.tableBAR_CODE_SCAN_HISTORY.NOUSEColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSNNull() {
+                return this.IsNull(this.tableBAR_CODE_SCAN_HISTORY.SNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSNNull() {
+                this[this.tableBAR_CODE_SCAN_HISTORY.SNColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -653,6 +701,30 @@ namespace BarCode {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetLOGNull() {
                 this[this.tableBAR_CODE_SCAN_HISTORY.LOGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSTATUSNull() {
+                return this.IsNull(this.tableBAR_CODE_SCAN_HISTORY.STATUSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSTATUSNull() {
+                this[this.tableBAR_CODE_SCAN_HISTORY.STATUSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOUSENull() {
+                return this.IsNull(this.tableBAR_CODE_SCAN_HISTORY.NOUSEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOUSENull() {
+                this[this.tableBAR_CODE_SCAN_HISTORY.NOUSEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -691,7 +763,7 @@ namespace BarCode {
         }
     }
 }
-namespace BarCode.storageDataSetTableAdapters {
+namespace BarCode.BARCODEDataSetTableAdapters {
     
     
     /// <summary>
@@ -705,13 +777,13 @@ namespace BarCode.storageDataSetTableAdapters {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class BAR_CODE_SCAN_HISTORYTableAdapter : global::System.ComponentModel.Component {
         
-        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
-        private global::System.Data.OleDb.OleDbConnection _connection;
+        private global::System.Data.SqlClient.SqlConnection _connection;
         
-        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
         
-        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
         
         private bool _clearBeforeFill;
         
@@ -723,7 +795,7 @@ namespace BarCode.storageDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
             get {
                 if ((this._adapter == null)) {
                     this.InitAdapter();
@@ -734,7 +806,7 @@ namespace BarCode.storageDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.OleDb.OleDbConnection Connection {
+        internal global::System.Data.SqlClient.SqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -754,7 +826,7 @@ namespace BarCode.storageDataSetTableAdapters {
                 }
                 for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
                     if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
                     }
                 }
             }
@@ -762,7 +834,7 @@ namespace BarCode.storageDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
             get {
                 return this._transaction;
             }
@@ -788,7 +860,7 @@ namespace BarCode.storageDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
             get {
                 if ((this._commandCollection == null)) {
                     this.InitCommandCollection();
@@ -811,65 +883,75 @@ namespace BarCode.storageDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitAdapter() {
-            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "BAR_CODE_SCAN_HISTORY";
             tableMapping.ColumnMappings.Add("UID", "UID");
-            tableMapping.ColumnMappings.Add("LOG", "LOG");
             tableMapping.ColumnMappings.Add("SN", "SN");
+            tableMapping.ColumnMappings.Add("LOG", "LOG");
             tableMapping.ColumnMappings.Add("STATUS", "STATUS");
+            tableMapping.ColumnMappings.Add("NOUSE", "NOUSE");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `BAR_CODE_SCAN_HISTORY` WHERE (((? = 1 AND `UID` IS NULL) OR (`UID` =" +
-                " ?)) AND ((? = 1 AND `LOG` IS NULL) OR (`LOG` = ?)) AND (`SN` = ?) AND (`STATUS`" +
-                " = ?))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[BAR_CODE_SCAN_HISTORY] WHERE (([UID] = @Original_UID) AND ((@IsNull_SN = 1 AND [SN] IS NULL) OR ([SN] = @Original_SN)) AND ((@IsNull_LOG = 1 AND [LOG] IS NULL) OR ([LOG] = @Original_LOG)) AND ((@IsNull_STATUS = 1 AND [STATUS] IS NULL) OR ([STATUS] = @Original_STATUS)) AND ((@IsNull_NOUSE = 1 AND [NOUSE] IS NULL) OR ([NOUSE] = @Original_NOUSE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_UID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_UID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_LOG", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LOG", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_LOG", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LOG", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SN", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATUS", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LOG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LOG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STATUS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOUSE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOUSE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `BAR_CODE_SCAN_HISTORY` (`LOG`, `SN`, `STATUS`) VALUES (?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[BAR_CODE_SCAN_HISTORY] ([UID], [SN], [LOG], [STATUS], [NOUSE])" +
+                " VALUES (@UID, @SN, @LOG, @STATUS, @NOUSE);\r\nSELECT UID, SN, [LOG], STATUS, NOUS" +
+                "E FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LOG", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LOG", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SN", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATUS", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOUSE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `BAR_CODE_SCAN_HISTORY` SET `LOG` = ?, `SN` = ?, `STATUS` = ? WHERE (((? =" +
-                " 1 AND `UID` IS NULL) OR (`UID` = ?)) AND ((? = 1 AND `LOG` IS NULL) OR (`LOG` =" +
-                " ?)) AND (`SN` = ?) AND (`STATUS` = ?))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[BAR_CODE_SCAN_HISTORY] SET [UID] = @UID, [SN] = @SN, [LOG] = @LOG, [STATUS] = @STATUS, [NOUSE] = @NOUSE WHERE (([UID] = @Original_UID) AND ((@IsNull_SN = 1 AND [SN] IS NULL) OR ([SN] = @Original_SN)) AND ((@IsNull_LOG = 1 AND [LOG] IS NULL) OR ([LOG] = @Original_LOG)) AND ((@IsNull_STATUS = 1 AND [STATUS] IS NULL) OR ([STATUS] = @Original_STATUS)) AND ((@IsNull_NOUSE = 1 AND [NOUSE] IS NULL) OR ([NOUSE] = @Original_NOUSE)));
+SELECT UID, SN, [LOG], STATUS, NOUSE FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LOG", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LOG", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SN", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATUS", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_UID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_UID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_LOG", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LOG", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_LOG", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LOG", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SN", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATUS", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOUSE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LOG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LOG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STATUS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOUSE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOUSE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
-            this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BarCode.Properties.Settings.Default.storageConnectionString;
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::BarCode.Properties.Settings.Default.BARCODEConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
-            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT UID, LOG, SN,STATUS FROM BAR_CODE_SCAN_HISTORY";
+            this._commandCollection[0].CommandText = "SELECT UID, SN, [LOG], STATUS, NOUSE FROM dbo.BAR_CODE_SCAN_HISTORY";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -877,7 +959,7 @@ namespace BarCode.storageDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(storageDataSet.BAR_CODE_SCAN_HISTORYDataTable dataTable) {
+        public virtual int Fill(BARCODEDataSet.BAR_CODE_SCAN_HISTORYDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -890,9 +972,9 @@ namespace BarCode.storageDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual storageDataSet.BAR_CODE_SCAN_HISTORYDataTable GetData() {
+        public virtual BARCODEDataSet.BAR_CODE_SCAN_HISTORYDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            storageDataSet.BAR_CODE_SCAN_HISTORYDataTable dataTable = new storageDataSet.BAR_CODE_SCAN_HISTORYDataTable();
+            BARCODEDataSet.BAR_CODE_SCAN_HISTORYDataTable dataTable = new BARCODEDataSet.BAR_CODE_SCAN_HISTORYDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -900,14 +982,14 @@ namespace BarCode.storageDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(storageDataSet.BAR_CODE_SCAN_HISTORYDataTable dataTable) {
+        public virtual int Update(BARCODEDataSet.BAR_CODE_SCAN_HISTORYDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(storageDataSet dataSet) {
+        public virtual int Update(BARCODEDataSet dataSet) {
             return this.Adapter.Update(dataSet, "BAR_CODE_SCAN_HISTORY");
         }
         
@@ -924,6 +1006,193 @@ namespace BarCode.storageDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_UID, string Original_SN, string Original_LOG, string Original_STATUS, string Original_NOUSE) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_UID));
+            if ((Original_SN == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_SN));
+            }
+            if ((Original_LOG == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_LOG));
+            }
+            if ((Original_STATUS == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_STATUS));
+            }
+            if ((Original_NOUSE == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_NOUSE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int UID, string SN, string LOG, string STATUS, string NOUSE) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(UID));
+            if ((SN == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(SN));
+            }
+            if ((LOG == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(LOG));
+            }
+            if ((STATUS == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(STATUS));
+            }
+            if ((NOUSE == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(NOUSE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int UID, string SN, string LOG, string STATUS, string NOUSE, int Original_UID, string Original_SN, string Original_LOG, string Original_STATUS, string Original_NOUSE) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(UID));
+            if ((SN == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(SN));
+            }
+            if ((LOG == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(LOG));
+            }
+            if ((STATUS == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(STATUS));
+            }
+            if ((NOUSE == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(NOUSE));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_UID));
+            if ((Original_SN == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_SN));
+            }
+            if ((Original_LOG == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_LOG));
+            }
+            if ((Original_STATUS == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_STATUS));
+            }
+            if ((Original_NOUSE == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_NOUSE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string SN, string LOG, string STATUS, string NOUSE, int Original_UID, string Original_SN, string Original_LOG, string Original_STATUS, string Original_NOUSE) {
+            return this.Update(Original_UID, SN, LOG, STATUS, NOUSE, Original_UID, Original_SN, Original_LOG, Original_STATUS, Original_NOUSE);
         }
     }
     
@@ -1018,7 +1287,7 @@ namespace BarCode.storageDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(storageDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BARCODEDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._bAR_CODE_SCAN_HISTORYTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.BAR_CODE_SCAN_HISTORY.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1037,7 +1306,7 @@ namespace BarCode.storageDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(storageDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BARCODEDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._bAR_CODE_SCAN_HISTORYTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.BAR_CODE_SCAN_HISTORY.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1055,7 +1324,7 @@ namespace BarCode.storageDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(storageDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BARCODEDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._bAR_CODE_SCAN_HISTORYTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.BAR_CODE_SCAN_HISTORY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1097,7 +1366,7 @@ namespace BarCode.storageDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(storageDataSet dataSet) {
+        public virtual int UpdateAll(BARCODEDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -1141,8 +1410,8 @@ namespace BarCode.storageDataSetTableAdapters {
                 //
                 if ((this._bAR_CODE_SCAN_HISTORYTableAdapter != null)) {
                     revertConnections.Add(this._bAR_CODE_SCAN_HISTORYTableAdapter, this._bAR_CODE_SCAN_HISTORYTableAdapter.Connection);
-                    this._bAR_CODE_SCAN_HISTORYTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._bAR_CODE_SCAN_HISTORYTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    this._bAR_CODE_SCAN_HISTORYTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._bAR_CODE_SCAN_HISTORYTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
                     if (this._bAR_CODE_SCAN_HISTORYTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._bAR_CODE_SCAN_HISTORYTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._bAR_CODE_SCAN_HISTORYTableAdapter.Adapter);
@@ -1207,7 +1476,7 @@ namespace BarCode.storageDataSetTableAdapters {
                     workConnection.Close();
                 }
                 if ((this._bAR_CODE_SCAN_HISTORYTableAdapter != null)) {
-                    this._bAR_CODE_SCAN_HISTORYTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._bAR_CODE_SCAN_HISTORYTableAdapter]));
+                    this._bAR_CODE_SCAN_HISTORYTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._bAR_CODE_SCAN_HISTORYTableAdapter]));
                     this._bAR_CODE_SCAN_HISTORYTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {

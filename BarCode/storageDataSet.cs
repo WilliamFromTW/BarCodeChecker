@@ -9,7 +9,5 @@
 
 namespace BarCode.storageDataSetTableAdapters {
     
-    
-    public partial class PRODUCTSTableAdapter {
-    }
+ 
 }

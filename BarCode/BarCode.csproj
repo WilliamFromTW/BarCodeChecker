@@ -95,6 +95,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BARCODEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BARCODEDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BarCodeMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,12 +113,6 @@
       <DependentUpon>BarCodeScanHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="InputBox.cs" />
-    <Compile Include="MaintainProductInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MaintainProductInfo.Designer.cs">
-      <DependentUpon>MaintainProductInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScanBarCode.cs">
@@ -136,9 +135,6 @@
     <EmbeddedResource Include="BarCodeScanHistory.resx">
       <DependentUpon>BarCodeScanHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintainProductInfo.resx">
-      <DependentUpon>MaintainProductInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -152,6 +148,17 @@
     <EmbeddedResource Include="ScanBarCode.resx">
       <DependentUpon>ScanBarCode.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BARCODEDataSet.xsc">
+      <DependentUpon>BARCODEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BARCODEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BARCODEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BARCODEDataSet.xss">
+      <DependentUpon>BARCODEDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
