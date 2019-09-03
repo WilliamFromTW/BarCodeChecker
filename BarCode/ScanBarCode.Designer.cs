@@ -33,17 +33,17 @@
             this.textResultStatus = new System.Windows.Forms.TextBox();
             this.textResult = new System.Windows.Forms.TextBox();
             this.ScanResultStatus = new System.Windows.Forms.Label();
-            this.storageDataSet = new BarCode.storageDataSet();
+            this.aBARCODEDataSet = new BarCode.BARCODEDataSet();
             this.storageDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bAR_CODE_SCAN_HISTORYTableAdapter = new BarCode.storageDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter();
-            this.tableAdapterManager1 = new BarCode.storageDataSetTableAdapters.TableAdapterManager();
+            this.aBAR_CODE_SCAN_HISTORYTableAdapter = new BarCode.BARCODEDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter();
+            this.tableAdapterManager1 = new BarCode.BARCODEDataSetTableAdapters.TableAdapterManager();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ScanBarCodeTxt = new System.Windows.Forms.TextBox();
             this.BarCodeLength = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.storageDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aBARCODEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageDataSetBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -96,24 +96,24 @@
             // 
             // storageDataSet
             // 
-            this.storageDataSet.DataSetName = "storageDataSet";
-            this.storageDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.aBARCODEDataSet.DataSetName = "BARCODEDataSet";
+            this.aBARCODEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // storageDataSetBindingSource
             // 
-            this.storageDataSetBindingSource.DataSource = this.storageDataSet;
+            this.storageDataSetBindingSource.DataSource = this.aBARCODEDataSet;
             this.storageDataSetBindingSource.Position = 0;
             // 
             // bAR_CODE_SCAN_HISTORYTableAdapter
             // 
-            this.bAR_CODE_SCAN_HISTORYTableAdapter.ClearBeforeFill = true;
+            this.aBAR_CODE_SCAN_HISTORYTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager1
             // 
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager1.BAR_CODE_SCAN_HISTORYTableAdapter = null;
             this.tableAdapterManager1.Connection = null;
-            this.tableAdapterManager1.UpdateOrder = BarCode.storageDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.UpdateOrder = BarCode.BARCODEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // groupBox2
             // 
@@ -182,7 +182,7 @@
             this.Load += new System.EventHandler(this.ScanBarCode_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.storageDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aBARCODEDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageDataSetBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -193,10 +193,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private storageDataSet storageDataSet;
+        private BARCODEDataSet aBARCODEDataSet;
         private System.Windows.Forms.BindingSource storageDataSetBindingSource;
-        private storageDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter bAR_CODE_SCAN_HISTORYTableAdapter;
-        private storageDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private BARCODEDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter aBAR_CODE_SCAN_HISTORYTableAdapter;
+        private BARCODEDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ScanBarCodeTxt;

@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Configuration;
 
 namespace BarCode
 {
     public partial class ScanBarCode : Form
     {
-        OleDbConnection con = null;
+        System.Data.SqlClient.SqlConnection con = null;
         public ScanBarCode()
         {
             InitializeComponent();
-            con = this.bAR_CODE_SCAN_HISTORYTableAdapter.Connection;
+            con = this.aBAR_CODE_SCAN_HISTORYTableAdapter.Connection;
             Closing += new CancelEventHandler(ScanBarCode_Closing);
         }
 
@@ -39,8 +40,10 @@ namespace BarCode
         private void ScanBarCodeTxt_TextChanged(object sender, EventArgs e)
         {
             string date  = DateTime.Now.ToString("MM月dd日 HH:mm:ss"); // includes leading zeros
-            string date2 = DateTime.Now.ToString("YYYY-MM-dd HH:mm:ss"); // includes leading zeros
-            OleDbCommand command = null;
+            string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"); // includes leading zeros
+            System.Data.SqlClient.SqlCommand command = null;
+         //   AddUpdateAppSettings("asdf","asdf");
+            ReadSetting("asdf");
             if (ScanBarCodeTxt.Text.Length == Convert.ToInt32(BarCodeLength.Text.ToString()))
             {
                 try
@@ -49,7 +52,8 @@ namespace BarCode
                     if (con.State != ConnectionState.Open)
                         con.Open();
                     //MessageBox.Show(listBox2.Text);
-                    command = new OleDbCommand("INSERT INTO BAR_CODE_SCAN_HISTORY(SN,LOG,STATUS,NOUSE) values ('" + this.ScanBarCodeTxt.Text + "','" + date + "','PASS','1')", con);
+                    command = con.CreateCommand();
+                    command.CommandText = "INSERT INTO BAR_CODE_SCAN_HISTORY(SN,LOG,STATUS,NOUSE) values ('" + this.ScanBarCodeTxt.Text + "','" + date + "','PASS','1')";
                     command.ExecuteNonQuery();
                     this.textResult.ForeColor = Color.Blue;
                     this.textResultStatus.ForeColor = Color.Blue;
@@ -57,6 +61,7 @@ namespace BarCode
                     this.textResultStatus.Text = "PASS!";
                     ScanBarCodeTxt.Text = "";
                     ScanBarCodeTxt.Focus();
+
                 }
                 catch (Exception ex)
                 {
@@ -70,7 +75,8 @@ namespace BarCode
                         if (con.State != ConnectionState.Open)
                             con.Open();
                         //MessageBox.Show(listBox2.Text);
-                        command = new OleDbCommand("INSERT INTO BAR_CODE_SCAN_HISTORY(SN,LOG,STATUS,NOUSE) values ('" + this.ScanBarCodeTxt.Text + "','" + date + "','FAIL','" + date2 + "')", con);
+                        command = con.CreateCommand();
+                        command.CommandText = "INSERT INTO BAR_CODE_SCAN_HISTORY(SN,LOG,STATUS,NOUSE) values ('" + this.ScanBarCodeTxt.Text + "','" + date + "','FAIL','" + date2 + "')";
                         command.ExecuteNonQuery();
                         ScanBarCodeTxt.Text = "";
                         ScanBarCodeTxt.Focus();
@@ -122,6 +128,43 @@ namespace BarCode
 
             }
         }
+        static void ReadSetting(string key)
+        {
+            try
+            {
+                var appSettings = ConfigurationManager.AppSettings;
+                string result = appSettings[key] ?? "Not Found";
+                Console.WriteLine(result);
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error reading app settings");
+            }
+        }
+
+        static void AddUpdateAppSettings(string key, string value)
+        {
+            try
+            {
+                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var settings = configFile.AppSettings.Settings;
+                if (settings[key] == null)
+                {
+                    settings.Add(key, value);
+                }
+                else
+                {
+                    settings[key].Value = value;
+                }
+                configFile.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error writing app settings");
+            }
+        }
+
     }
 
 }

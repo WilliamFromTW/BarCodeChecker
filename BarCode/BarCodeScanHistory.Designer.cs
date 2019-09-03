@@ -35,11 +35,11 @@
             this.lOGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bARCODESCANHISTORYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.storageDataSet = new BarCode.storageDataSet();
-            this.bAR_CODE_SCAN_HISTORYTableAdapter = new BarCode.storageDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter();
+            this.aBARCODEDataSet = new BarCode.BARCODEDataSet();
+            this.aBAR_CODE_SCAN_HISTORYTableAdapter = new BarCode.BARCODEDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bARCODESCANHISTORYBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storageDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aBARCODEDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -100,18 +100,18 @@
             // bARCODESCANHISTORYBindingSource
             // 
             this.bARCODESCANHISTORYBindingSource.DataMember = "BAR_CODE_SCAN_HISTORY";
-            this.bARCODESCANHISTORYBindingSource.DataSource = this.storageDataSet;
+            this.bARCODESCANHISTORYBindingSource.DataSource = this.aBARCODEDataSet;
             this.bARCODESCANHISTORYBindingSource.Sort = "LOG desc";
             this.bARCODESCANHISTORYBindingSource.CurrentChanged += new System.EventHandler(this.bARCODESCANHISTORYBindingSource_CurrentChanged);
             // 
             // storageDataSet
             // 
-            this.storageDataSet.DataSetName = "storageDataSet";
-            this.storageDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.aBARCODEDataSet.DataSetName = "BARCODEDataSet";
+            this.aBARCODEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bAR_CODE_SCAN_HISTORYTableAdapter
             // 
-            this.bAR_CODE_SCAN_HISTORYTableAdapter.ClearBeforeFill = true;
+            this.aBAR_CODE_SCAN_HISTORYTableAdapter.ClearBeforeFill = true;
             // 
             // BarCodeScanHistory
             // 
@@ -124,7 +124,7 @@
             this.Load += new System.EventHandler(this.BarCodeScanHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bARCODESCANHISTORYBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storageDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aBARCODEDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -132,9 +132,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private storageDataSet storageDataSet;
+        private BARCODEDataSet aBARCODEDataSet;
         private System.Windows.Forms.BindingSource bARCODESCANHISTORYBindingSource;
-        private storageDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter bAR_CODE_SCAN_HISTORYTableAdapter;
+        private BARCODEDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter aBAR_CODE_SCAN_HISTORYTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn uIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SN;
         private System.Windows.Forms.DataGridViewTextBoxColumn lOGDataGridViewTextBoxColumn;
