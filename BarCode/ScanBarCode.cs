@@ -14,16 +14,40 @@ namespace BarCode
     public partial class ScanBarCode : Form
     {
         System.Data.SqlClient.SqlConnection con = null;
+        System.Data.SqlClient.SqlCommand command = null;
         public ScanBarCode()
         {
             InitializeComponent();
-            con = this.aBAR_CODE_SCAN_HISTORYTableAdapter.Connection;
+            
             Closing += new CancelEventHandler(ScanBarCode_Closing);
         }
 
         private void ScanBarCode_Load(object sender, EventArgs e)
         {
             this.ActiveControl = ScanBarCodeTxt;
+            textWorkStationNumber.Text = Program.ReadSetting("WorkStationNumber");
+            BarCodeLength.Text = Program.ReadSetting("BarCodeLength");
+            aBAR_CODE_SCAN_HISTORYTableAdapter.Connection.ConnectionString = "Data Source=" + Program.ReadSetting("IP") +
+                ";Initial Catalog=" + Program.ReadSetting("DB") + ";Persist Security Info=True;User ID=" +
+                Program.ReadSetting("UID") + ";Password=" +
+                Program.ReadSetting("PWD");
+            con = this.aBAR_CODE_SCAN_HISTORYTableAdapter.Connection;
+            if (con.State != ConnectionState.Open)
+            {
+                try
+                {
+                    con.Open();
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show("DB connection failed! Check Database Settings");
+                    Close();
+                }
+            }
+            //MessageBox.Show(listBox2.Text);
+
+            command = con.CreateCommand();
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,19 +65,13 @@ namespace BarCode
         {
             string date  = DateTime.Now.ToString("MM月dd日 HH:mm:ss"); // includes leading zeros
             string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"); // includes leading zeros
-            System.Data.SqlClient.SqlCommand command = null;
-         //   AddUpdateAppSettings("asdf","asdf");
-            ReadSetting("asdf");
+            
+        
             if (ScanBarCodeTxt.Text.Length == Convert.ToInt32(BarCodeLength.Text.ToString()))
             {
                 try
                 {
-                    DataSet ds = new DataSet();
-                    if (con.State != ConnectionState.Open)
-                        con.Open();
-                    //MessageBox.Show(listBox2.Text);
-                    command = con.CreateCommand();
-                    command.CommandText = "INSERT INTO BAR_CODE_SCAN_HISTORY(SN,LOG,STATUS,NOUSE) values ('" + this.ScanBarCodeTxt.Text + "','" + date + "','PASS','1')";
+                    command.CommandText = "INSERT INTO BAR_CODE_SCAN_HISTORY(WORKSTATION_NUMBER,SN,LOG,STATUS,MEMO) values ('" + Program.ReadSetting("WorkStationNumber")+"','"+ this.ScanBarCodeTxt.Text + "','" + date + "','PASS','1')";
                     command.ExecuteNonQuery();
                     this.textResult.ForeColor = Color.Blue;
                     this.textResultStatus.ForeColor = Color.Blue;
@@ -71,12 +89,11 @@ namespace BarCode
                         this.textResultStatus.ForeColor = Color.Red;
                         this.textResult.Text = "檢查 " + this.ScanBarCodeTxt.Text + " ...";
                         this.textResultStatus.Text = "FAIL!";
-                        DataSet ds = new DataSet();
                         if (con.State != ConnectionState.Open)
                             con.Open();
                         //MessageBox.Show(listBox2.Text);
                         command = con.CreateCommand();
-                        command.CommandText = "INSERT INTO BAR_CODE_SCAN_HISTORY(SN,LOG,STATUS,NOUSE) values ('" + this.ScanBarCodeTxt.Text + "','" + date + "','FAIL','" + date2 + "')";
+                        command.CommandText = "INSERT INTO BAR_CODE_SCAN_HISTORY(WORKSTATION_NUMBER,SN,LOG,STATUS,MEMO) values ('" + Program.ReadSetting("WorkStationNumber") + "','"+ this.ScanBarCodeTxt.Text + "','" + date + "','FAIL','" + date2 + "')";
                         command.ExecuteNonQuery();
                         ScanBarCodeTxt.Text = "";
                         ScanBarCodeTxt.Focus();
@@ -97,7 +114,7 @@ namespace BarCode
 
         private void BarCodeLength_TextChanged(object sender, EventArgs e)
         {
-
+            Program.AddUpdateAppSettings("BarCodeLength", BarCodeLength.Text);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -128,43 +145,16 @@ namespace BarCode
 
             }
         }
-        static void ReadSetting(string key)
+
+        private void Label3_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var appSettings = ConfigurationManager.AppSettings;
-                string result = appSettings[key] ?? "Not Found";
-                Console.WriteLine(result);
-            }
-            catch (ConfigurationErrorsException)
-            {
-                Console.WriteLine("Error reading app settings");
-            }
+
         }
 
-        static void AddUpdateAppSettings(string key, string value)
+        private void TextWorkStationNumber_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                var settings = configFile.AppSettings.Settings;
-                if (settings[key] == null)
-                {
-                    settings.Add(key, value);
-                }
-                else
-                {
-                    settings[key].Value = value;
-                }
-                configFile.Save(ConfigurationSaveMode.Modified);
-                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
-            }
-            catch (ConfigurationErrorsException)
-            {
-                Console.WriteLine("Error writing app settings");
-            }
+            Program.AddUpdateAppSettings("WorkStationNumber", textWorkStationNumber.Text );
         }
-
     }
 
 }

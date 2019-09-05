@@ -82,6 +82,9 @@
   <PropertyGroup>
     <DelaySign>false</DelaySign>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>barcodescanner.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -101,6 +104,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BARCODEDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BARCODEDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BARCODEDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BarCodeMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +120,12 @@
     </Compile>
     <Compile Include="BarCodeScanHistory.Designer.cs">
       <DependentUpon>BarCodeScanHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="InputBox.cs" />
     <Compile Include="Program.cs" />
@@ -127,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BarCodeScanHistory.resx">
       <DependentUpon>BarCodeScanHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -146,8 +163,8 @@
     </None>
     <None Include="BARCODEDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BARCODEDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>BARCODEDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="BARCODEDataSet.xss">
       <DependentUpon>BARCODEDataSet.xsd</DependentUpon>
@@ -187,6 +204,9 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="barcodescanner.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

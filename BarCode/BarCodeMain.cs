@@ -38,16 +38,7 @@ namespace BarCode
             new BarCodeScanHistory().Show();
         }
 
-        private String getDatabasePath()
-        {
-            string dbFileName = "storage.mdb";
-            string CurrentDatabasePath = null;
-            if (AppDomain.CurrentDomain.GetData("DataDirectory") != null)
-                CurrentDatabasePath = System.IO.Path.Combine(AppDomain.CurrentDomain.GetData("DataDirectory").ToString(), dbFileName);
-            else
-                CurrentDatabasePath = ".\\" + dbFileName;
-            return CurrentDatabasePath;
-        }
+      
        
 
       
@@ -72,9 +63,25 @@ namespace BarCode
 
         }
 
-        private void BindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
 
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            InputBoxValidation validation = delegate (string val) {
+                if (val == "")
+                    return "Value cannot be empty.";
+                if (!val.Equals(Program.ReadSetting("PASSWORD")))
+                    return "password is not correct!";
+                else
+                    return "";
+            };
+            string value = "kafeiou";
+            if (InputBox.Show("請輸入密碼", "密碼:", ref value, validation) == DialogResult.OK)
+            {
+                new Settings().Show();
+            }
+           
         }
+
     }
+
 }

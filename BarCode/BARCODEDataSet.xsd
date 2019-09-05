@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BARCODEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BARCODEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BarCode.Properties.Settings.GlobalReference.Default.BARCODEConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BARCODEConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="BARCODEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BarCode.Properties.Settings.GlobalReference.Default.BARCODEConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BAR_CODE_SCAN_HISTORYTableAdapter" GeneratorDataComponentClassName="BAR_CODE_SCAN_HISTORYTableAdapter" Name="BAR_CODE_SCAN_HISTORY" UserDataComponentName="BAR_CODE_SCAN_HISTORYTableAdapter">

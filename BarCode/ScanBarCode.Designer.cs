@@ -42,6 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ScanBarCodeTxt = new System.Windows.Forms.TextBox();
             this.BarCodeLength = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textWorkStationNumber = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aBARCODEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageDataSetBindingSource)).BeginInit();
@@ -94,7 +96,7 @@
             this.ScanResultStatus.Text = "  ";
             this.ScanResultStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // storageDataSet
+            // aBARCODEDataSet
             // 
             this.aBARCODEDataSet.DataSetName = "BARCODEDataSet";
             this.aBARCODEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
@@ -104,7 +106,7 @@
             this.storageDataSetBindingSource.DataSource = this.aBARCODEDataSet;
             this.storageDataSetBindingSource.Position = 0;
             // 
-            // bAR_CODE_SCAN_HISTORYTableAdapter
+            // aBAR_CODE_SCAN_HISTORYTableAdapter
             // 
             this.aBAR_CODE_SCAN_HISTORYTableAdapter.ClearBeforeFill = true;
             // 
@@ -117,6 +119,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textWorkStationNumber);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.ScanBarCodeTxt);
@@ -170,6 +174,29 @@
             this.BarCodeLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.BarCodeLength.TextChanged += new System.EventHandler(this.BarCodeLength_TextChanged);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(187, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "線別 : ";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
+            // 
+            // textWorkStationNumber
+            // 
+            this.textWorkStationNumber.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textWorkStationNumber.ForeColor = System.Drawing.Color.Red;
+            this.textWorkStationNumber.Location = new System.Drawing.Point(245, 21);
+            this.textWorkStationNumber.Name = "textWorkStationNumber";
+            this.textWorkStationNumber.Size = new System.Drawing.Size(44, 27);
+            this.textWorkStationNumber.TabIndex = 7;
+            this.textWorkStationNumber.Text = "0";
+            this.textWorkStationNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textWorkStationNumber.TextChanged += new System.EventHandler(this.TextWorkStationNumber_TextChanged);
+            // 
             // ScanBarCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -205,5 +232,7 @@
         private System.Windows.Forms.Label ScanResultStatus;
         private System.Windows.Forms.TextBox textResult;
         private System.Windows.Forms.TextBox textResultStatus;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textWorkStationNumber;
     }
 }
