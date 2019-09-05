@@ -281,13 +281,15 @@ namespace BarCode {
             
             private global::System.Data.DataColumn columnUID;
             
+            private global::System.Data.DataColumn columnWORKSTATION_NUMBER;
+            
             private global::System.Data.DataColumn columnSN;
             
             private global::System.Data.DataColumn columnLOG;
             
             private global::System.Data.DataColumn columnSTATUS;
             
-            private global::System.Data.DataColumn columnNOUSE;
+            private global::System.Data.DataColumn columnMEMO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -332,6 +334,14 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WORKSTATION_NUMBERColumn {
+                get {
+                    return this.columnWORKSTATION_NUMBER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn SNColumn {
                 get {
                     return this.columnSN;
@@ -356,9 +366,9 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NOUSEColumn {
+            public global::System.Data.DataColumn MEMOColumn {
                 get {
-                    return this.columnNOUSE;
+                    return this.columnMEMO;
                 }
             }
             
@@ -399,14 +409,15 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BAR_CODE_SCAN_HISTORYRow AddBAR_CODE_SCAN_HISTORYRow(int UID, string SN, string LOG, string STATUS, string NOUSE) {
+            public BAR_CODE_SCAN_HISTORYRow AddBAR_CODE_SCAN_HISTORYRow(string WORKSTATION_NUMBER, string SN, string LOG, string STATUS, string MEMO) {
                 BAR_CODE_SCAN_HISTORYRow rowBAR_CODE_SCAN_HISTORYRow = ((BAR_CODE_SCAN_HISTORYRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        UID,
+                        null,
+                        WORKSTATION_NUMBER,
                         SN,
                         LOG,
                         STATUS,
-                        NOUSE};
+                        MEMO};
                 rowBAR_CODE_SCAN_HISTORYRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBAR_CODE_SCAN_HISTORYRow);
                 return rowBAR_CODE_SCAN_HISTORYRow;
@@ -437,10 +448,11 @@ namespace BarCode {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnUID = base.Columns["UID"];
+                this.columnWORKSTATION_NUMBER = base.Columns["WORKSTATION_NUMBER"];
                 this.columnSN = base.Columns["SN"];
                 this.columnLOG = base.Columns["LOG"];
                 this.columnSTATUS = base.Columns["STATUS"];
-                this.columnNOUSE = base.Columns["NOUSE"];
+                this.columnMEMO = base.Columns["MEMO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -448,22 +460,29 @@ namespace BarCode {
             private void InitClass() {
                 this.columnUID = new global::System.Data.DataColumn("UID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUID);
+                this.columnWORKSTATION_NUMBER = new global::System.Data.DataColumn("WORKSTATION_NUMBER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWORKSTATION_NUMBER);
                 this.columnSN = new global::System.Data.DataColumn("SN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSN);
                 this.columnLOG = new global::System.Data.DataColumn("LOG", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLOG);
                 this.columnSTATUS = new global::System.Data.DataColumn("STATUS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTATUS);
-                this.columnNOUSE = new global::System.Data.DataColumn("NOUSE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNOUSE);
+                this.columnMEMO = new global::System.Data.DataColumn("MEMO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMEMO);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnUID}, true));
+                this.columnUID.AutoIncrement = true;
+                this.columnUID.AutoIncrementSeed = -1;
+                this.columnUID.AutoIncrementStep = -1;
                 this.columnUID.AllowDBNull = false;
+                this.columnUID.ReadOnly = true;
                 this.columnUID.Unique = true;
+                this.columnWORKSTATION_NUMBER.MaxLength = 50;
                 this.columnSN.MaxLength = 50;
                 this.columnLOG.MaxLength = 50;
                 this.columnSTATUS.MaxLength = 50;
-                this.columnNOUSE.MaxLength = 50;
+                this.columnMEMO.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -617,6 +636,22 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string WORKSTATION_NUMBER {
+                get {
+                    try {
+                        return ((string)(this[this.tableBAR_CODE_SCAN_HISTORY.WORKSTATION_NUMBERColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'BAR_CODE_SCAN_HISTORY\' 中資料行 \'WORKSTATION_NUMBER\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableBAR_CODE_SCAN_HISTORY.WORKSTATION_NUMBERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string SN {
                 get {
                     try {
@@ -665,18 +700,30 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NOUSE {
+            public string MEMO {
                 get {
                     try {
-                        return ((string)(this[this.tableBAR_CODE_SCAN_HISTORY.NOUSEColumn]));
+                        return ((string)(this[this.tableBAR_CODE_SCAN_HISTORY.MEMOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'BAR_CODE_SCAN_HISTORY\' 中資料行 \'NOUSE\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'BAR_CODE_SCAN_HISTORY\' 中資料行 \'MEMO\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableBAR_CODE_SCAN_HISTORY.NOUSEColumn] = value;
+                    this[this.tableBAR_CODE_SCAN_HISTORY.MEMOColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsWORKSTATION_NUMBERNull() {
+                return this.IsNull(this.tableBAR_CODE_SCAN_HISTORY.WORKSTATION_NUMBERColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetWORKSTATION_NUMBERNull() {
+                this[this.tableBAR_CODE_SCAN_HISTORY.WORKSTATION_NUMBERColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -717,14 +764,14 @@ namespace BarCode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNOUSENull() {
-                return this.IsNull(this.tableBAR_CODE_SCAN_HISTORY.NOUSEColumn);
+            public bool IsMEMONull() {
+                return this.IsNull(this.tableBAR_CODE_SCAN_HISTORY.MEMOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNOUSENull() {
-                this[this.tableBAR_CODE_SCAN_HISTORY.NOUSEColumn] = global::System.Convert.DBNull;
+            public void SetMEMONull() {
+                this[this.tableBAR_CODE_SCAN_HISTORY.MEMOColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -888,54 +935,59 @@ namespace BarCode.BARCODEDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "BAR_CODE_SCAN_HISTORY";
             tableMapping.ColumnMappings.Add("UID", "UID");
+            tableMapping.ColumnMappings.Add("WORKSTATION_NUMBER", "WORKSTATION_NUMBER");
             tableMapping.ColumnMappings.Add("SN", "SN");
             tableMapping.ColumnMappings.Add("LOG", "LOG");
             tableMapping.ColumnMappings.Add("STATUS", "STATUS");
-            tableMapping.ColumnMappings.Add("NOUSE", "NOUSE");
+            tableMapping.ColumnMappings.Add("MEMO", "MEMO");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[BAR_CODE_SCAN_HISTORY] WHERE (([UID] = @Original_UID) AND ((@IsNull_SN = 1 AND [SN] IS NULL) OR ([SN] = @Original_SN)) AND ((@IsNull_LOG = 1 AND [LOG] IS NULL) OR ([LOG] = @Original_LOG)) AND ((@IsNull_STATUS = 1 AND [STATUS] IS NULL) OR ([STATUS] = @Original_STATUS)) AND ((@IsNull_NOUSE = 1 AND [NOUSE] IS NULL) OR ([NOUSE] = @Original_NOUSE)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[BAR_CODE_SCAN_HISTORY] WHERE (([UID] = @Original_UID) AND ((@IsNull_WORKSTATION_NUMBER = 1 AND [WORKSTATION_NUMBER] IS NULL) OR ([WORKSTATION_NUMBER] = @Original_WORKSTATION_NUMBER)) AND ((@IsNull_SN = 1 AND [SN] IS NULL) OR ([SN] = @Original_SN)) AND ((@IsNull_LOG = 1 AND [LOG] IS NULL) OR ([LOG] = @Original_LOG)) AND ((@IsNull_STATUS = 1 AND [STATUS] IS NULL) OR ([STATUS] = @Original_STATUS)) AND ((@IsNull_MEMO = 1 AND [MEMO] IS NULL) OR ([MEMO] = @Original_MEMO)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_WORKSTATION_NUMBER", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WORKSTATION_NUMBER", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WORKSTATION_NUMBER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WORKSTATION_NUMBER", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LOG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LOG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STATUS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOUSE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOUSE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MEMO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MEMO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MEMO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MEMO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[BAR_CODE_SCAN_HISTORY] ([UID], [SN], [LOG], [STATUS], [NOUSE])" +
-                " VALUES (@UID, @SN, @LOG, @STATUS, @NOUSE);\r\nSELECT UID, SN, [LOG], STATUS, NOUS" +
-                "E FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[BAR_CODE_SCAN_HISTORY] ([WORKSTATION_NUMBER], [SN], [LOG], [STATUS], [MEMO]) VALUES (@WORKSTATION_NUMBER, @SN, @LOG, @STATUS, @MEMO);
+SELECT UID, WORKSTATION_NUMBER, SN, [LOG], STATUS, MEMO FROM BAR_CODE_SCAN_HISTORY WHERE (UID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WORKSTATION_NUMBER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WORKSTATION_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOUSE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MEMO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MEMO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[BAR_CODE_SCAN_HISTORY] SET [UID] = @UID, [SN] = @SN, [LOG] = @LOG, [STATUS] = @STATUS, [NOUSE] = @NOUSE WHERE (([UID] = @Original_UID) AND ((@IsNull_SN = 1 AND [SN] IS NULL) OR ([SN] = @Original_SN)) AND ((@IsNull_LOG = 1 AND [LOG] IS NULL) OR ([LOG] = @Original_LOG)) AND ((@IsNull_STATUS = 1 AND [STATUS] IS NULL) OR ([STATUS] = @Original_STATUS)) AND ((@IsNull_NOUSE = 1 AND [NOUSE] IS NULL) OR ([NOUSE] = @Original_NOUSE)));
-SELECT UID, SN, [LOG], STATUS, NOUSE FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[BAR_CODE_SCAN_HISTORY] SET [WORKSTATION_NUMBER] = @WORKSTATION_NUMBER, [SN] = @SN, [LOG] = @LOG, [STATUS] = @STATUS, [MEMO] = @MEMO WHERE (([UID] = @Original_UID) AND ((@IsNull_WORKSTATION_NUMBER = 1 AND [WORKSTATION_NUMBER] IS NULL) OR ([WORKSTATION_NUMBER] = @Original_WORKSTATION_NUMBER)) AND ((@IsNull_SN = 1 AND [SN] IS NULL) OR ([SN] = @Original_SN)) AND ((@IsNull_LOG = 1 AND [LOG] IS NULL) OR ([LOG] = @Original_LOG)) AND ((@IsNull_STATUS = 1 AND [STATUS] IS NULL) OR ([STATUS] = @Original_STATUS)) AND ((@IsNull_MEMO = 1 AND [MEMO] IS NULL) OR ([MEMO] = @Original_MEMO)));
+SELECT UID, WORKSTATION_NUMBER, SN, [LOG], STATUS, MEMO FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WORKSTATION_NUMBER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WORKSTATION_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOUSE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MEMO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MEMO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_WORKSTATION_NUMBER", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WORKSTATION_NUMBER", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WORKSTATION_NUMBER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WORKSTATION_NUMBER", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LOG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LOG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STATUS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOUSE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOUSE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOUSE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MEMO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MEMO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MEMO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MEMO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -948,11 +1000,26 @@ SELECT UID, SN, [LOG], STATUS, NOUSE FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT UID, SN, [LOG], STATUS, NOUSE FROM dbo.BAR_CODE_SCAN_HISTORY";
+            this._commandCollection[0].CommandText = "SELECT UID, WORKSTATION_NUMBER, SN, [LOG], STATUS, MEMO FROM dbo.BAR_CODE_SCAN_HI" +
+                "STORY";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT          UID, WORKSTATION_NUMBER, SN, [LOG], STATUS, MEMO\r\nFROM           " +
+                "   BAR_CODE_SCAN_HISTORY\r\nWHERE          (WORKSTATION_NUMBER = @sWORKSTATION_NUM" +
+                "BER) AND (STATUS = @sSTATUS)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sWORKSTATION_NUMBER", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "WORKSTATION_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sSTATUS", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT UID, WORKSTATION_NUMBER, SN, [LOG], STATUS, MEMO FROM dbo.BAR_CODE_SCAN_HI" +
+                "STORY WHERE WORKSTATION_NUMBER=@sWORKSTATION_NUMBER";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sWORKSTATION_NUMBER", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "WORKSTATION_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -977,6 +1044,50 @@ SELECT UID, SN, [LOG], STATUS, NOUSE FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UI
             BARCODEDataSet.BAR_CODE_SCAN_HISTORYDataTable dataTable = new BARCODEDataSet.BAR_CODE_SCAN_HISTORYDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(BARCODEDataSet.BAR_CODE_SCAN_HISTORYDataTable dataTable, string sWORKSTATION_NUMBER, string sSTATUS) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((sWORKSTATION_NUMBER == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(sWORKSTATION_NUMBER));
+            }
+            if ((sSTATUS == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(sSTATUS));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(BARCODEDataSet.BAR_CODE_SCAN_HISTORYDataTable dataTable, string sWORKSTATION_NUMBER) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((sWORKSTATION_NUMBER == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(sWORKSTATION_NUMBER));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1012,39 +1123,47 @@ SELECT UID, SN, [LOG], STATUS, NOUSE FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_UID, string Original_SN, string Original_LOG, string Original_STATUS, string Original_NOUSE) {
+        public virtual int Delete(int Original_UID, string Original_WORKSTATION_NUMBER, string Original_SN, string Original_LOG, string Original_STATUS, string Original_MEMO) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_UID));
-            if ((Original_SN == null)) {
+            if ((Original_WORKSTATION_NUMBER == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_SN));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_WORKSTATION_NUMBER));
             }
-            if ((Original_LOG == null)) {
+            if ((Original_SN == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_LOG));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_SN));
             }
-            if ((Original_STATUS == null)) {
+            if ((Original_LOG == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_STATUS));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_LOG));
             }
-            if ((Original_NOUSE == null)) {
+            if ((Original_STATUS == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_NOUSE));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_STATUS));
+            }
+            if ((Original_MEMO == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_MEMO));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1066,8 +1185,13 @@ SELECT UID, SN, [LOG], STATUS, NOUSE FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int UID, string SN, string LOG, string STATUS, string NOUSE) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(UID));
+        public virtual int Insert(string WORKSTATION_NUMBER, string SN, string LOG, string STATUS, string MEMO) {
+            if ((WORKSTATION_NUMBER == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(WORKSTATION_NUMBER));
+            }
             if ((SN == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -1086,11 +1210,11 @@ SELECT UID, SN, [LOG], STATUS, NOUSE FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UI
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(STATUS));
             }
-            if ((NOUSE == null)) {
+            if ((MEMO == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(NOUSE));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(MEMO));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1112,8 +1236,13 @@ SELECT UID, SN, [LOG], STATUS, NOUSE FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int UID, string SN, string LOG, string STATUS, string NOUSE, int Original_UID, string Original_SN, string Original_LOG, string Original_STATUS, string Original_NOUSE) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(UID));
+        public virtual int Update(string WORKSTATION_NUMBER, string SN, string LOG, string STATUS, string MEMO, int Original_UID, string Original_WORKSTATION_NUMBER, string Original_SN, string Original_LOG, string Original_STATUS, string Original_MEMO, int UID) {
+            if ((WORKSTATION_NUMBER == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(WORKSTATION_NUMBER));
+            }
             if ((SN == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -1132,45 +1261,54 @@ SELECT UID, SN, [LOG], STATUS, NOUSE FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UI
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(STATUS));
             }
-            if ((NOUSE == null)) {
+            if ((MEMO == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(NOUSE));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(MEMO));
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_UID));
-            if ((Original_SN == null)) {
+            if ((Original_WORKSTATION_NUMBER == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_SN));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_WORKSTATION_NUMBER));
             }
-            if ((Original_LOG == null)) {
+            if ((Original_SN == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_LOG));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_SN));
             }
-            if ((Original_STATUS == null)) {
+            if ((Original_LOG == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_STATUS));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_LOG));
             }
-            if ((Original_NOUSE == null)) {
+            if ((Original_STATUS == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_NOUSE));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_STATUS));
             }
+            if ((Original_MEMO == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_MEMO));
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(UID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1191,8 +1329,8 @@ SELECT UID, SN, [LOG], STATUS, NOUSE FROM BAR_CODE_SCAN_HISTORY WHERE (UID = @UI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string SN, string LOG, string STATUS, string NOUSE, int Original_UID, string Original_SN, string Original_LOG, string Original_STATUS, string Original_NOUSE) {
-            return this.Update(Original_UID, SN, LOG, STATUS, NOUSE, Original_UID, Original_SN, Original_LOG, Original_STATUS, Original_NOUSE);
+        public virtual int Update(string WORKSTATION_NUMBER, string SN, string LOG, string STATUS, string MEMO, int Original_UID, string Original_WORKSTATION_NUMBER, string Original_SN, string Original_LOG, string Original_STATUS, string Original_MEMO) {
+            return this.Update(WORKSTATION_NUMBER, SN, LOG, STATUS, MEMO, Original_UID, Original_WORKSTATION_NUMBER, Original_SN, Original_LOG, Original_STATUS, Original_MEMO, Original_UID);
         }
     }
     

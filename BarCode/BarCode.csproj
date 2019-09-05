@@ -104,11 +104,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BARCODEDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BARCODEDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BARCODEDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="BarCodeMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,8 +158,8 @@
     </None>
     <None Include="BARCODEDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BARCODEDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-      <LastGenOutput>BARCODEDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="BARCODEDataSet.xss">
       <DependentUpon>BARCODEDataSet.xsd</DependentUpon>

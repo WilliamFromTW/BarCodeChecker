@@ -44,8 +44,8 @@ namespace BarCode
                     Close();
                 }
             }
-            //MessageBox.Show(listBox2.Text);
-
+            textWorkStationNumber.Text = Program.ReadSetting("WorkStationNumber");
+            BarCodeLength.Text = Program.ReadSetting("BarCodeLength");
             command = con.CreateCommand();
 
         }
@@ -153,7 +153,7 @@ namespace BarCode
 
         private void TextWorkStationNumber_TextChanged(object sender, EventArgs e)
         {
-            Program.AddUpdateAppSettings("WorkStationNumber", textWorkStationNumber.Text );
+              Program.AddUpdateAppSettings("WorkStationNumber", textWorkStationNumber.Text);
         }
     }
 

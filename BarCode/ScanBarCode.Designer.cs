@@ -33,21 +33,21 @@
             this.textResultStatus = new System.Windows.Forms.TextBox();
             this.textResult = new System.Windows.Forms.TextBox();
             this.ScanResultStatus = new System.Windows.Forms.Label();
-            this.aBARCODEDataSet = new BarCode.BARCODEDataSet();
-            this.storageDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aBAR_CODE_SCAN_HISTORYTableAdapter = new BarCode.BARCODEDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter();
-            this.tableAdapterManager1 = new BarCode.BARCODEDataSetTableAdapters.TableAdapterManager();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textWorkStationNumber = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ScanBarCodeTxt = new System.Windows.Forms.TextBox();
             this.BarCodeLength = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textWorkStationNumber = new System.Windows.Forms.TextBox();
+            this.aBARCODEDataSet = new BarCode.BARCODEDataSet();
+            this.storageDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aBAR_CODE_SCAN_HISTORYTableAdapter = new BarCode.BARCODEDataSetTableAdapters.BAR_CODE_SCAN_HISTORYTableAdapter();
+            this.tableAdapterManager1 = new BarCode.BARCODEDataSetTableAdapters.TableAdapterManager();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aBARCODEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageDataSetBindingSource)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -96,27 +96,6 @@
             this.ScanResultStatus.Text = "  ";
             this.ScanResultStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // aBARCODEDataSet
-            // 
-            this.aBARCODEDataSet.DataSetName = "BARCODEDataSet";
-            this.aBARCODEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // storageDataSetBindingSource
-            // 
-            this.storageDataSetBindingSource.DataSource = this.aBARCODEDataSet;
-            this.storageDataSetBindingSource.Position = 0;
-            // 
-            // aBAR_CODE_SCAN_HISTORYTableAdapter
-            // 
-            this.aBAR_CODE_SCAN_HISTORYTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager1
-            // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.BAR_CODE_SCAN_HISTORYTableAdapter = null;
-            this.tableAdapterManager1.Connection = null;
-            this.tableAdapterManager1.UpdateOrder = BarCode.BARCODEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textWorkStationNumber);
@@ -127,10 +106,32 @@
             this.groupBox2.Controls.Add(this.BarCodeLength);
             this.groupBox2.Location = new System.Drawing.Point(18, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(402, 117);
+            this.groupBox2.Size = new System.Drawing.Size(479, 117);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // textWorkStationNumber
+            // 
+            this.textWorkStationNumber.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textWorkStationNumber.ForeColor = System.Drawing.Color.Red;
+            this.textWorkStationNumber.Location = new System.Drawing.Point(245, 21);
+            this.textWorkStationNumber.Name = "textWorkStationNumber";
+            this.textWorkStationNumber.Size = new System.Drawing.Size(44, 27);
+            this.textWorkStationNumber.TabIndex = 7;
+            this.textWorkStationNumber.Text = "0";
+            this.textWorkStationNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(187, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "線別 : ";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // label2
             // 
@@ -174,28 +175,26 @@
             this.BarCodeLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.BarCodeLength.TextChanged += new System.EventHandler(this.BarCodeLength_TextChanged);
             // 
-            // label3
+            // aBARCODEDataSet
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(187, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "線別 : ";
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
+            this.aBARCODEDataSet.DataSetName = "BARCODEDataSet";
+            this.aBARCODEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textWorkStationNumber
+            // storageDataSetBindingSource
             // 
-            this.textWorkStationNumber.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textWorkStationNumber.ForeColor = System.Drawing.Color.Red;
-            this.textWorkStationNumber.Location = new System.Drawing.Point(245, 21);
-            this.textWorkStationNumber.Name = "textWorkStationNumber";
-            this.textWorkStationNumber.Size = new System.Drawing.Size(44, 27);
-            this.textWorkStationNumber.TabIndex = 7;
-            this.textWorkStationNumber.Text = "0";
-            this.textWorkStationNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textWorkStationNumber.TextChanged += new System.EventHandler(this.TextWorkStationNumber_TextChanged);
+            this.storageDataSetBindingSource.DataSource = this.aBARCODEDataSet;
+            this.storageDataSetBindingSource.Position = 0;
+            // 
+            // aBAR_CODE_SCAN_HISTORYTableAdapter
+            // 
+            this.aBAR_CODE_SCAN_HISTORYTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.BAR_CODE_SCAN_HISTORYTableAdapter = null;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.UpdateOrder = BarCode.BARCODEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // ScanBarCode
             // 
@@ -209,10 +208,10 @@
             this.Load += new System.EventHandler(this.ScanBarCode_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aBARCODEDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storageDataSetBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aBARCODEDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storageDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
