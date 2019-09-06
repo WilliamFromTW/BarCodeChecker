@@ -151,9 +151,10 @@ namespace BarCode
 
         }
 
-        private void TextWorkStationNumber_TextChanged(object sender, EventArgs e)
+
+        private void TextWorkStationNumber_TextChanged_1(object sender, EventArgs e)
         {
-              Program.AddUpdateAppSettings("WorkStationNumber", textWorkStationNumber.Text);
+            Program.AddUpdateAppSettings("WorkStationNumber", textWorkStationNumber.Text);
         }
     }
 

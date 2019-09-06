@@ -18,7 +18,6 @@ namespace BarCode
     ";Initial Catalog=" + Program.ReadSetting("DB") + ";Persist Security Info=True;User ID=" +
     Program.ReadSetting("UID") + ";Password=" +
     Program.ReadSetting("PWD");
-            if (sWORKSTATION_NUMBER.Text.Trim().Equals(""))
                 sWORKSTATION_NUMBER.Text = Program.ReadSetting("WorkStationNumber");
 
 
@@ -31,6 +30,7 @@ namespace BarCode
             try
             {
                 //   this.aBAR_CODE_SCAN_HISTORYTableAdapter.Fill(this.aBARCODEDataSet.BAR_CODE_SCAN_HISTORY);
+
                 if (sSTATUS.Text.Equals("ALL"))
                     this.aBAR_CODE_SCAN_HISTORYTableAdapter.FillBy1(this.aBARCODEDataSet.BAR_CODE_SCAN_HISTORY, sWORKSTATION_NUMBER.Text);
                 else

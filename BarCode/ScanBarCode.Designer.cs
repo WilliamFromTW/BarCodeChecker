@@ -121,6 +121,7 @@
             this.textWorkStationNumber.TabIndex = 7;
             this.textWorkStationNumber.Text = "0";
             this.textWorkStationNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textWorkStationNumber.TextChanged += new System.EventHandler(this.TextWorkStationNumber_TextChanged_1);
             // 
             // label3
             // 
